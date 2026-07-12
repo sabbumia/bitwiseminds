@@ -1,0 +1,178 @@
+/* ---------------------------------------------------------------------------
+   Pricing page components (app/price/page.tsx)
+   These classes are referenced by the pricing page but were never defined in
+   the theme stylesheet. Styled here with the theme's own design tokens:
+   white cards / 30px radius / 0 10px 50px shadow (matches .price-card),
+   --theme-color orange accents, Fredoka titles.
+--------------------------------------------------------------------------- */
+
+.pricing-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.pricing-toggler .toggler {
+  font-family: var(--title-font);
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--body-color);
+  transition: color 0.3s ease;
+}
+
+.pricing-toggler .toggler--is-active {
+  color: var(--title-color);
+}
+
+.pricing-toggler .save-badge {
+  display: inline-block;
+  background-color: var(--theme-color);
+  color: var(--white-color);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 4px 10px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.pricing-toggler .switch {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 30px;
+}
+
+.pricing-toggler .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.pricing-toggler .slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background-color: #e4e4e5;
+  border-radius: 100px;
+  transition: background-color 0.3s ease;
+}
+
+.pricing-toggler .slider:before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  top: 4px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.pricing-toggler .switch input:checked + .slider {
+  background-color: var(--theme-color);
+}
+
+.pricing-toggler .switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--white-color);
+  border: 2px solid transparent;
+  border-radius: 30px;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.08);
+  padding: 40px 35px;
+  z-index: 1;
+}
+
+.pricing-card.active {
+  border-color: var(--theme-color);
+}
+
+.pricing-card .popular-badge {
+  position: absolute;
+  top: 0;
+  right: 32px;
+  transform: translateY(-50%);
+  background-color: var(--theme-color);
+  color: var(--white-color);
+  font-family: var(--title-font);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 100px;
+  padding: 8px 16px;
+}
+
+.pricing-card .pricing-header .box-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.pricing-card .price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e4e4e5;
+}
+
+.pricing-card .price-wrap .price {
+  font-family: var(--title-font);
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--theme-color);
+  line-height: 1;
+}
+
+.pricing-card .price-wrap .period {
+  font-size: 16px;
+  color: var(--body-color);
+}
+
+.pricing-card .pricing-list {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 30px;
+  flex: 1;
+}
+
+.pricing-card .pricing-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 7px 0;
+  color: var(--body-color);
+}
+
+.pricing-card .pricing-list li i {
+  color: var(--theme-color);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.pricing-card > .th-btn {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Small devices */
+@media (max-width: 575px) {
+  .pricing-card {
+    padding: 32px 24px;
+  }
+
+  .pricing-card .price-wrap .price {
+    font-size: 34px;
+  }
+}
