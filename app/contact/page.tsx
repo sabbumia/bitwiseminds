@@ -38,7 +38,7 @@ export default function ContactPage() {
                 {[
                   { icon: "/assets/img/icon/con-call.svg", title: "Call Us", text: "+880 1878009399", href: "tel:+8801878009399" },
                   { icon: "/assets/img/icon/con-email.svg", title: "Email Us", text: "hello@bitwiseminds.com", href: "mailto:hello@bitwiseminds.com" },
-                  { icon: "/assets/img/icon/con-location.svg", title: "Visit Our Office", text: "42 Tech Avenue, Silicon District, New York", href: "#" },
+                  { icon: "/assets/img/icon/con-location.svg", title: "Visit Our Office", text: "Uttara, Dhaka, Bangladesh", href: "#" },
                 ].map((info, i) => (
                   <div key={i} className="info-box" data-cue="slideInUp">
                     <div className="box-icon">
